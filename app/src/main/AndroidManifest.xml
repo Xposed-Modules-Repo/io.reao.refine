@@ -2,19 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INSTALL_PACKAGES" />
-    <uses-permission android:name="android.permission.READ_INSTALL_SESSIONS" />
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
 
     <application
-        android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
+        android:name=".RefineApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Redesign"
-        tools:targetApi="31">
+        android:theme="@style/Theme.refine"
+        >
 
         <meta-data
             android:name="xposedmodule"
@@ -31,10 +30,9 @@
 
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.Redesign"
-            android:launchMode="standard"
             android:exported="true"
-            >
+            android:launchMode="standard"
+            android:theme="@style/Theme.refine">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,7 +41,7 @@
         </activity>
 
         <activity
-            android:name=".packageinstaller.InstallPackageActivity"
+            android:name=".packageinstaller.PackageInstallerActivity"
 
             android:exported="true">
             <intent-filter android:priority="1">
@@ -67,6 +65,16 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="org.miui.refine.androidx-startup"
+            android:exported="false">
+            <meta-data
+                android:name="org.miui.refine.initializer.TimberInitializer"
+                android:value="androidx.startup" />
+        </provider>
+
 
     </application>
 

@@ -1,7 +1,11 @@
+# MIUI-refine
 
-Kotlin First
-jetpack compose First
 
-[Android 10 源码分析：APK 的安装流程](https://juejin.cn/post/6844904078015725576)
+## TODO
+[] USB安装APP弹窗
+[] 关闭开启权限的倒计时
 
-# MIUI-Redesign
+
+
+## Thanks
+https://github.com/SimonMarquis/Android-PreferencesManager

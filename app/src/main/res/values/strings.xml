@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Redesign</string>
+    <string name="app_name">REFINE</string>
 
-    <string name="xposed_desc">Redesign You MIUI</string>
+    <string name="xposed_desc">refine You MIUI</string>
 </resources>

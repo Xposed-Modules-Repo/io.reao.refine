@@ -15,6 +15,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Redesign"
+rootProject.name = "refine"
 include(":app")
 include(":hidden-api")
