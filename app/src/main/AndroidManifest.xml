@@ -35,14 +35,24 @@
             android:theme="@style/Theme.refine">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+
+        <activity
+            android:name=".SettingActivity"
+            android:exported="true"
+            android:theme="@style/Theme.refine">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS"/>
+            </intent-filter>
+        </activity>
+
+
         <activity
             android:name=".packageinstaller.PackageInstallerActivity"
-
             android:exported="true">
             <intent-filter android:priority="1">
                 <action android:name="android.intent.action.VIEW" />
