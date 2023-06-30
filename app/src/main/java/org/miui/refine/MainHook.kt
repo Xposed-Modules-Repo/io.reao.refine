@@ -7,6 +7,9 @@ import org.miui.refine.hook.HookPackageInstaller
 import org.miui.refine.hook.HookSelfModule
 
 private const val PACKAGE_MIUI_PACKAGEINSTALLER = "com.miui.packageinstaller"
+private const val PACKAGE_XIAOMI_JOYOSE = "com.xiaomi.joyose"
+
+
 private const val PACKAGE_REFINE = "org.miui.refine"
 
 class MainHook : IXposedHookLoadPackage {

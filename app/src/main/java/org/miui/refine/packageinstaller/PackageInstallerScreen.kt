@@ -60,6 +60,7 @@ import org.miui.refine.packageinstaller.util.InstallUtil
 import org.miui.refine.packageinstaller.util.PackageUtil
 import org.miui.refine.ui.component.MIUIButton
 import org.miui.refine.utils.Log
+import java.net.URLDecoder
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -78,7 +79,10 @@ fun PackageInstallerScreen(
     ) {
 
         LaunchedEffect(key1 = intentData) {
-            val intent = Intent.parseUri(intentData, 0)
+            val intent = Intent.parseUri(
+                URLDecoder.decode(intentData, "UTF-8"),
+                0
+            )
             prepare(context = context, viewModel = viewModel, intent = intent)
         }
 

@@ -12,6 +12,7 @@ import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import org.miui.refine.ui.theme.refineTheme
+import java.net.URLEncoder
 
 
 class PackageInstallerActivity : ComponentActivity() {
@@ -29,6 +30,7 @@ class PackageInstallerActivity : ComponentActivity() {
 
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
+        val data = URLEncoder.encode(intent.data!!.toString(), "UTF-8")
         setContent {
 
             ViewSetup()
@@ -37,7 +39,7 @@ class PackageInstallerActivity : ComponentActivity() {
 
             refineTheme {
                 ProvideWindowInsets {
-                    NavigationGraph(navController = navController)
+                    NavigationGraph(navController = navController, data = data)
                 }
             }
         }
