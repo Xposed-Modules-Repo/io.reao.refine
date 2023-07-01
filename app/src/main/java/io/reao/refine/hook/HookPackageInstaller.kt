@@ -17,10 +17,11 @@ object HookPackageInstaller {
         val modulePref = XSharedPreferences(BuildConfig.APPLICATION_ID, "model_pref")
 
         // check if the replace packageInstaller is enabled
-        if (modulePref.file.canRead() && modulePref.getBoolean(
+        if (!modulePref.file.canRead() || modulePref.getBoolean(
                 "REPLACE_PACKAGE_INSTALLER", true
             )
         ) {
+            XposedBridge.log("Replace PackageInstaller is enabled")
             XposedHelpers.findAndHookMethod(
                 "com.miui.packageInstaller.InstallStart",
                 lpparam.classLoader,
@@ -28,6 +29,8 @@ object HookPackageInstaller {
                 Bundle::class.java,
                 hookOnCreate()
             )
+        } else {
+            XposedBridge.log("Replace PackageInstaller is disabled")
         }
     }
 
