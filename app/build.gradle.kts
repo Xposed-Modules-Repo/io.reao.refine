@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "org.miui.refine"
+    namespace = "io.reao.refine"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "org.miui.refine"
+        applicationId = "io.reao.refine"
         minSdk = 31
         targetSdk = 33
         versionCode = 1
@@ -40,6 +40,7 @@ android {
     buildFeatures {
         compose = true
         aidl = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
@@ -94,9 +95,8 @@ dependencies {
 
     // startup
     implementation("androidx.startup:startup-runtime:1.1.1")
-    // https://mvnrepository.com/artifact/org.simpleframework/simple-xml
+
     implementation("org.simpleframework:simple-xml:2.7.1")
-
-
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
 
 }

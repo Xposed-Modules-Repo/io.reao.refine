@@ -12,8 +12,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.refine"
-        >
+        android:theme="@style/Theme.refine">
 
         <meta-data
             android:name="xposedmodule"
@@ -23,7 +22,7 @@
             android:value="@string/xposed_desc" />
         <meta-data
             android:name="xposedminversion"
-            android:value="54" />
+            android:value="93" />
         <meta-data
             android:name="xposedscope"
             android:resource="@array/xposedscope" />
@@ -41,12 +40,12 @@
 
 
         <activity
-            android:name=".SettingActivity"
+            android:name=".ui.SettingActivity"
             android:exported="true"
             android:theme="@style/Theme.refine">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
             </intent-filter>
         </activity>
 
@@ -78,10 +77,10 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="org.miui.refine.androidx-startup"
+            android:authorities="io.reao.refine.androidx-startup"
             android:exported="false">
             <meta-data
-                android:name="org.miui.refine.initializer.TimberInitializer"
+                android:name="io.reao.refine.initializer.TimberInitializer"
                 android:value="androidx.startup" />
         </provider>
 
